@@ -115,8 +115,8 @@ jobs:
       run: mix test
 
 
-    # Step: Push to Dev Server
-    deploy:
+  # Step: Push to Dev Server
+  deploy:
     name: Deploy app
     runs-on: ubuntu-latest
     steps:
