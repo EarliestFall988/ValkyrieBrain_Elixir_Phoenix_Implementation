@@ -21,9 +21,14 @@ defmodule ValkSmWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ValkSmWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ValkSmWeb do
+    pipe_through :api
+
+    get "/ping", StateMachineController, :ping
+
+    post "/auth", StateMachineController, :auth
+
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:valk_sm, :dev_routes) do
