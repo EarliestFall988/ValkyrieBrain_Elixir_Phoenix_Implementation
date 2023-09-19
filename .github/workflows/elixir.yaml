@@ -18,7 +18,7 @@ permissions:
   contents: read
 
 jobs:
-  typecheck:
+  test:
     - name: Check out source
     uses: actions/checkout@v2
 
