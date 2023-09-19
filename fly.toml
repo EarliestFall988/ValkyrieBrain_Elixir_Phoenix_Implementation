@@ -4,6 +4,7 @@
 #
 
 app = "valk-sm-elixir"
+app_name = "valk-sm-elixir"
 primary_region = "dfw"
 kill_signal = "SIGTERM"
 swap_size_mb = 512
