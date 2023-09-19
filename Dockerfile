@@ -88,4 +88,4 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/valk_sm ./
 
 USER nobody
 
-CMD ["chmod +x /app/bin/*","/app/bin/server"]
+CMD ["chmod +x /app/bin/server/*","/app/bin/server"]
