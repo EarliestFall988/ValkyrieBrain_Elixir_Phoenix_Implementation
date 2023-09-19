@@ -88,5 +88,7 @@ COPY --from=builder --chown=nobody:root /app/_build/${MIX_ENV}/rel/valk_sm ./
 
 USER nobody
 
-CMD ["chmod +x /app/bin/server/* && \
-    sed -i "s/\r$//g /app/bin/server/*" ","/app/bin/server"]
+RUN chmod +x /app/bin/server/* && \ 
+    sed -i \"s/\r$//g\" /app/bin/server/*
+
+CMD ["/app/bin/server"]
