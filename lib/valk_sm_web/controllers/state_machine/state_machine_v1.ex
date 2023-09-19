@@ -21,7 +21,7 @@ defmodule ValkSm.StateMachineV1 do
     struct = %ValkSm.StateMachineV1{
       sm
       | variables: variables,
-        functions: functions,
+        functions: funcs,
         states: states,
         transitions: transitions
     }
