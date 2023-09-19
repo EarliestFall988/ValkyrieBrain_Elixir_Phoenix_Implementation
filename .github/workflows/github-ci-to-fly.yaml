@@ -1,0 +1,36 @@
+name: Elixir CI/CD with Fly.io
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Elixir
+        uses: actions/setup-elixir@v1
+        with:
+          otp-version: 24.x
+          elixir-version: 1.12.x
+          
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Run tests
+        run: mix test
+
+      - name: Build release
+        run: mix release
+
+      - name: Deploy to Fly.io
+        uses: superfly/flyctl-actions@v3
+        with:
+          flyctl_version: latest
+          api_token: fo1_yy8x77AgBbyRO207dcrGkmBxUPEJWlW9fRgZxPwU2J8
+          args: deploy
