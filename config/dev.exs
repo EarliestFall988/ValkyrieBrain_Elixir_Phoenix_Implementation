@@ -7,7 +7,7 @@ config :valk_sm, ValkSm.Repo,
   hostname: "localhost",
   database: "valk_dev",
   stacktrace: true,
-  port: "32768",
+  port: "32769",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

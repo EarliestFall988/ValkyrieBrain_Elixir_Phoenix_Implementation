@@ -14,11 +14,11 @@ defmodule ValkSmWeb.Router do
     plug :accepts, ["json"]
   end
 
-  # scope "/", ValkSmWeb do
-  #   pipe_through :browser
+  scope "/", ValkSmWeb do
+    pipe_through :browser
 
-  #   get "/", PageController, :home
-  # end
+    get "/", PageController, :home
+  end
 
   # Other scopes may use custom stacks.
   scope "/api", ValkSmWeb do
@@ -27,6 +27,8 @@ defmodule ValkSmWeb.Router do
     get "/ping", StateMachineController, :ping
 
     post "/auth", StateMachineController, :auth
+
+    post "/build", StateMachineController, :build
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
